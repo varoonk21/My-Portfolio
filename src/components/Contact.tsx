@@ -65,20 +65,20 @@ export default function Contact() {
     };
 
     return (
-        <section className=" bg-neutral-100 text-neutral-800 md:px-16 md:py-24 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
+        <section className=" bg-neutral-100 text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
             <h2 className="text-4xl text-center font-bold mb-8">Get In Touch</h2>
 
-            <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
+            <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
 
-                {/* Left side - Talk to me */}
+                {/* Contact Informantion */}
                 <div className="flex-1">
                     <h3 className="text-2xl font-bold">Contact Information</h3>
 
                     <p className="text-lg my-8 text-neutral-600 leading-relaxed">Ready to start your next project? I'd love to hear about your ideas and discuss how we can bring them to life.</p>
 
                     {/* email */}
-                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 p-2 hover:shadow-md rounded-lg">
-                        <div className=" bg-neutral-800 p-2 rounded-full text-white items-center ">
+                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 hover:shadow-md rounded-lg">
+                        <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 strokeWidth="2">
                                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -94,7 +94,7 @@ export default function Contact() {
 
                     {/* Phone */}
 
-                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 p-1 hover:shadow-md rounded-lg">
+                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 hover:shadow-md rounded-lg">
                         <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -112,8 +112,8 @@ export default function Contact() {
 
                     {/* Location */}
 
-                    <div className="flex items-start mt-6 space-x-4">
-                        <div className="pt-1">
+                    <div className="flex items-center mt-6 space-x-4">
+                        <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -131,7 +131,7 @@ export default function Contact() {
                         <h3 className="text-lg font-semibold">Connect With Me</h3>
                         <div className="flex mt-4 space-x-4">
 
-                            <a href={User.social.github.url} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Github profile" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent dark:hover:text-white dark:active:text-white bg-gray-200 text-[#3d3d3d] dark:bg-gray-50 rounded-full">
+                            <a href={User.social.github.url} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Github profile" target="_blank" className="p-3 hover:scale-110 active:bg-transparent dark:hover:text-white dark:active:text-white bg-neutral-200 text-[#3d3d3d] dark:bg-gray-50 rounded-full">
                                 {/* github */}
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -141,8 +141,9 @@ export default function Contact() {
                                     <path d="M9 18c-4.51 2-5-2-7-2"></path>
                                 </svg>
                             </a>
-                            <a href={User.social.linkedin} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Linkedin profile" target="_blank" className="p-3 hover:bg-transparent active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
-                                {/* linkedin */}
+
+                            <a href={User.social.linkedin} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Linkedin profile" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
+
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -150,6 +151,19 @@ export default function Contact() {
                                     <circle cx="4" cy="4" r="2"></circle>
                                 </svg>
                             </a>
+
+                            <a href={User.contact.whatsapp} rel="noopener noreferrer" aria-label="Text Varoon Kumar on Whatsapp" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
+
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    className="h-5 w-5"
+                                    fill="currentColor"
+                                >
+                                    <path d="M12.04 2C6.55 2 2.1 6.46 2.1 11.95c0 1.98.52 3.84 1.51 5.48L2 22l4.71-1.55a9.9 9.9 0 0 0 5.33 1.55h.01c5.49 0 9.95-4.46 9.95-9.95C22 6.46 17.54 2 12.04 2zm5.79 14.38c-.24.67-1.41 1.29-1.95 1.35-.5.06-1.12.08-1.8-.14-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.13-.18-1.17-1.55-1.17-2.96s.74-2.1 1-2.39c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.17.01.4-.06.63.48.24.58.82 2 .89 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.47-.14.16-.3.36-.43.48-.14.14-.28.29-.12.57.17.29.73 1.2 1.56 1.95 1.07.95 1.97 1.25 2.26 1.39.28.14.45.12.62-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.1 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.7-.17 1.37z" />
+                                </svg>
+                            </a>
+
                         </div>
                     </div>
                 </div>

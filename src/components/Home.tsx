@@ -2,10 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import User from "../data/user.json";
 
 export default function Hero() {
+
+  const scrollToSection = (id: string) => {
+    const element = document.querySelector(id);
+    element?.scrollIntoView();
+  };
+
   return (
-    <section id="#home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section id="#home" className="relative h-screen max-h-dvh w-full overflow-hidden flex items-center justify-center">
 
       {/* Background Video */}
       <video
@@ -18,25 +25,28 @@ export default function Hero() {
         <source src="/video/abstract-glass.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0" />
+    
 
+      <div />
       {/* Left Social Bar */}
-      <div className="absolute left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900">
+      <div className="absolute left-2 md:left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900  sm:flex">
 
-        <div className="bg-neutral-700 rounded-full p-2"></div>
+        <div className="flex flex-col items-center gap-1">
+          <div className="bg-neutral-700 rounded-full p-2"></div>
         <div className="w-px h-56 bg-neutral-700" />
+        </div>
+        
 
-        <a href="#" className="hover:text-neutral-800 transition">
+        <a href={User.social.linkedin} className="hover:scale-110 transition">
           <Icon icon="mdi:linkedin" width="22" />
         </a>
 
-        <a href="#" className="hover:text-neutral-800 transition">
-          <Icon icon="mdi:whatsapp" width="22" />
+        <a href={User.social.github.url} className="hover:scale-105 transition">
+          <Icon icon="mdi:github" width="22" />
         </a>
 
-        <a href="#" className="hover:text-neutral-800 transition">
-          <Icon icon="mdi:github" width="22" />
+        <a href={User.contact.whatsapp} className="hover:scale-105 transition">
+          <Icon icon="mdi:whatsapp" width="22" />
         </a>
 
       </div>
@@ -57,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-semibold text-neutral-900 leading-tight"
+          className="text-4xl md:text-7xl   lg:text-8xl font-semibold text-neutral-900 leading-tight"
         >
           Frontend Developer <br />
           & Video Editor
@@ -65,19 +75,11 @@ export default function Hero() {
 
       </div>
 
-      {/* Scroll Indicator 
       <motion.div
         animate={{ y: [0, 12, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
-        className="absolute bottom-10 text-neutral-700 text-sm"
-      >
-        scroll down
-      </motion.div>
-        */}
-      <motion.div
-        animate={{ y: [0, 12, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        className="absolute bottom-8 text-neutral-700 text-sm px-1 py-3 rounded-xl border border-neutral-700"
+        className="absolute bottom-8 text-neutral-700 text-sm px-1 py-3 rounded-2xl border border-neutral-700"
+        onClick={() => scrollToSection('#about')}
       >
         <Icon icon="mdi:arrow-down" width="18" />
         
@@ -86,8 +88,4 @@ export default function Hero() {
     </section>
   );
 }
-                // <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
-                //     <div className="w-6 h-10 border-2 border-neutral-900 rounded-full flex justify-center">
-                //         <div className="w-1 h-3 bg-neutral-900 rounded-full mt-2 animate-pulse"></div>
-                //     </div>
-                // </div>
+          

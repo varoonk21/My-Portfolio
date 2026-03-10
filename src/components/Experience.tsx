@@ -6,7 +6,7 @@ import experiences from "../data/experiences.json"
 export default function Experience() {
     return (
         <section id="experience" className="relative z-20 bg-neutral-100 py-24 px-4 md:px-12 ">
-            <div className="max-w-7xl">
+            <div className="max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function Experience() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="flex flex-col md:flex-row gap-8 md:gap-16 border-l-2 border-neutral-800 pl-8 md:pl-12 relative"
                         >
-                            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full" />
+                            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-neutral-500 rounded-full" />
 
                             <div className="md:w-1/3">
                                 <h3 className="text-2xl font-bold">{exp.company}</h3>

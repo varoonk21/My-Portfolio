@@ -47,13 +47,13 @@ export default function Navbar() {
         >
             <nav className="relative flex items-center px-6 py-3  backdrop-blur-md border border-neutral-300 rounded-xl w-full max-w-3xl">
 
-                <div className="text-xl font-bold tracking-widest pr-6">
+                <div className="text-xl font-bold tracking-widest pr-4">
                     <a href="#home">VK</a>
                 </div>
 
-                <div className="h-6 w-px bg-gray-200 mx-2"></div>
+                <div className="h-6 w-px bg-neutral-400 mx-2"></div>
 
-                <ul className="hidden md:flex items-center justify-center gap-8 flex-1">
+                    <ul className="hidden md:flex items-center justify-center gap-6 flex-1">
                     {links.map((link) => (
                         <li key={link.name}>
                             <a
@@ -66,7 +66,7 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                <div className="hidden md:block h-6 w-px bg-gray-200 ml-2 mr-6"></div>
+                <div className="hidden md:block h-6 w-px bg-neutral-400 ml-2 mr-6"></div>
 
                 <button className="hidden md:block bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
                     <a href="#contact" className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: -20 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 right-0 mt-4 p-4 bg-white border border-gray-200 rounded-2xl shadow-xl md:hidden"
+                            className="absolute top-full left-0 right-0 mt-4 p-4 bg-neutral-100 border border-neutral-200 rounded-2xl shadow-xl md:hidden"
                         >
                             <ul className="flex flex-col gap-2">
                                 {links.map((link) => (

@@ -10,14 +10,14 @@ type Skill = {
 const Skills: React.FC = () => {
     return (
         <section id="skills" className="bg-neutral-100 py-24 px-6">
-            <div className="max-w-6xl text-center">
+            <div className="max-w-6xl mx-auto text-center">
 
-                {/* Title */}
+                
                 <h2 className="text-4xl font-semibold text-gray-900">
                     Skills & Tools
                 </h2>
 
-                <p className="mt-4 text-gray-600 max-w-3xl ">
+                <p className="mt-4 text-gray-600 max-w-3xl mx-auto ">
                     Technologies and creative tools I use to build modern web experiences and digital content.
                 </p>
 

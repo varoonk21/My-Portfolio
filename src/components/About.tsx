@@ -7,7 +7,7 @@ const About: React.FC = () => {
     return (
         <section id="about" className="bg-gray-100 py-24 px-6 w-full">
             
-            <div className="flex flex-col items-center justify-center mb-20">
+            <div className="flex flex-col items-center justify-center mb-10 sm:mb-20 ">
                 <span className="text-4xl font-bold text-gray-900">About Me</span>
                 <span className="text-md font-light text-gray-900">My Introduction</span>
             </div>
@@ -55,20 +55,21 @@ const About: React.FC = () => {
                             className="rounded-xl grayscale-100 hover:grayscale-0 hover:scale-105 transition-all duration-500 ease-in-out object-cover w-100 h-100"
                         />
 
-                        <div className="absolute top-20 -left-8 bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
+                        <div className="absolute top-20 -left-2 md:-left-8  font-semibold  bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm animate-[bounce_1.5s_ease-in_infinite]">
                             <Icon icon="mdi:palette-outline" width={18} />
                             UI/UX Design
                         </div>
 
-                        <div className="absolute bottom-6 -left-10 bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
+                        <div className="absolute top-50 -right-4 md:-right-10  font-semibold bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm animate-[bounce_1.5s_ease-in_infinite]">
+                            <Icon icon="mdi:video-outline" width={18} />
+                            Video Editing
+                        </div>
+
+                        <div className="absolute bottom-6 -left-2 md:-left-10 font-semibold bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm animate-[bounce_1.5s_ease-in_infinite]">
                             <Icon icon="mdi:web" width={18} />
                             Web Development
                         </div>
 
-                        <div className="absolute top-50 -right-10 bg-white shadow-md px-4 py-2 rounded-lg flex items-center gap-2 text-sm">
-                            <Icon icon="mdi:video-outline" width={18} />
-                            Video Editing
-                        </div>
 
                     </div>
 

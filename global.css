@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -13,4 +13,9 @@ button, a {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
