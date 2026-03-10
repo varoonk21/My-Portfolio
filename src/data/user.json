@@ -1,0 +1,23 @@
+{
+    "name": "Varoon Kumar",
+    "title": "Frontend Developer & Video Editor",
+    "intro": "I combine design, technology, and storytelling to create impactful digital experiences.",
+    "location": "Hyderabad, Sindh, Pakistan",
+    "contact": {
+        "phone": "+92 317 3937073",
+        "email": "varoonk21@gmail.com"
+    },
+    "social": {
+        "github": {
+            "userName": "varoonk21",
+            "url": "https://github.com/varoonk21",
+            "reposFetchLimit": 20
+        },
+        "linkedin": "https://www.linkedin.com/in/varoonk21/"
+    },
+    "about": [
+        "I am an aspiring Frontend Developer and Video Editor who enjoys creating engaging digital experiences using modern web technologies and creative storytelling.",
+        "I am currently pursuing a Bachelor's in Software Engineering at MUET, while building my skills in React, Tailwind CSS, and web development.",
+        "I love combining design, technology, and creativity to craft meaningful and impactful digital products."
+    ]
+}

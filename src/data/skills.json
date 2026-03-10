@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Html",
+        "icon": "logos:html-5"
+    },
+    {
+        "name": "Tailwind CSS",
+        "icon": "logos:tailwindcss-icon"
+    },
+    {
+        "name": "JavaScript",
+        "icon": "logos:javascript"
+    },
+    {
+        "name": "React.js",
+        "icon": "logos:react"
+    },
+    {
+        "name": "Typescript",
+        "icon": "logos:typescript-icon"
+    },
+    {
+        "name": "Framer Motion",
+        "icon": "logos:framer"
+    },
+    {
+        "name": "Firebase",
+        "icon": "logos:firebase-icon"
+    },
+    {
+        "name": "WordPress",
+        "icon": "logos:wordpress-icon"
+    },
+    {
+        "name": "Adobe Premiere Pro",
+        "icon": "logos:adobe-premiere"
+    },
+    {
+        "name": "Adobe Illustrator",
+        "icon": "logos:adobe-illustrator"
+    },
+    {
+        "name": "Vs Code",
+        "icon": "logos:visual-studio-code"
+    },
+    {
+        "name": "Git",
+        "icon": "logos:git-icon"
+    }
+]

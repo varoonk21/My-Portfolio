@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+body {
+    font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+button, a {
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
