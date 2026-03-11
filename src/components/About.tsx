@@ -5,8 +5,8 @@ import User from "../data/user.json";
 
 const About: React.FC = () => {
     return (
-        <section id="about" className="bg-neutral-100 py-24 px-6 w-full">
-            
+        <section id="about" className="bg-[#f0f0f0] py-24 px-6 w-full">
+
             <div className="flex flex-col items-center justify-center mb-10 sm:mb-20 ">
                 <span className="text-4xl font-bold text-neutral-900">About Me</span>
                 <span className="text-md font-light text-neutral-900">My Introduction</span>
@@ -34,7 +34,7 @@ const About: React.FC = () => {
                         </a>
 
                         <button className="active:scale-[0.98] hover:opacity-90 hover:scale-105 font-medium bg-neutral-900 text-white dark:bg-white dxlark:text-neutral-800 px-6 py-3 rounded-xl flex items-center justify-center transition-all shadow-md group gap-2">
-                            <Icon icon="mdi:file-document" width="20"/>
+                            <Icon icon="mdi:file-document" width="20" />
                             Resume
                         </button>
                     </div>
@@ -72,7 +72,6 @@ const About: React.FC = () => {
                     </div>
 
                 </div>
-
             </div>
         </section>
     );

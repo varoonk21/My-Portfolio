@@ -65,7 +65,7 @@ export default function Contact() {
     };
 
     return (
-        <section className=" bg-neutral-100 text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
+        <section className=" bg-[#f0f0f0] text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
             <h2 className="text-4xl text-center font-bold mb-10">Get In Touch</h2>
 
             <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
@@ -77,7 +77,7 @@ export default function Contact() {
                     <p className="text-lg my-8 text-neutral-600 leading-relaxed">Ready to start your next project? I'd love to hear about your ideas and discuss how we can bring them to life.</p>
 
                     {/* email */}
-                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 hover:shadow-md rounded-lg">
+                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 hover:scale-105 transition-all duration-200 rounded-lg">
                         <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 strokeWidth="2">
@@ -94,7 +94,7 @@ export default function Contact() {
 
                     {/* Phone */}
 
-                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 hover:shadow-md rounded-lg">
+                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 hover:scale-105 transition-all duration-200 rounded-lg">
                         <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -176,7 +176,7 @@ export default function Contact() {
                     <div className="flex flex-col w-full gap-10">
                         {/* Name */}
                         <div className="relative ">
-                            <label htmlFor="name" className="absolute -top-3 left-4 bg-neutral-100 dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Name</label>
+                            <label htmlFor="name" className="absolute -top-3 left-4 bg-[#f0f0f0] dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Name</label>
                             <input value={name} onChange={e => {
                                 setName(e.target.value)
                                 if (error.nameError) setError(prev => ({ ...prev, nameError: false }))
@@ -188,7 +188,7 @@ export default function Contact() {
 
                         {/* Email */}
                         <div className="relative ">
-                            <label htmlFor="email" className="absolute -top-3 left-4 bg-neutral-100 dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Mail</label>
+                            <label htmlFor="email" className="absolute -top-3 left-4 bg-[#f0f0f0] dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Mail</label>
                             <input value={email} onChange={e => {
                                 setEmail(e.target.value)
                                 if (error.emailError) setError(prev => ({ ...prev, emailError: false }))
@@ -200,7 +200,7 @@ export default function Contact() {
 
                         {/* Project / Message */}
                         <div className="relative ">
-                            <label htmlFor="message" className="absolute -top-3 left-4 bg-neutral-100 dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Message</label>
+                            <label htmlFor="message" className="absolute -top-3 left-4 bg-[#f0f0f0] dark:bg-[#1e1e1e] px-2 text-sm font-medium text-gray-500 dark:text-gray-400 z-10 transition-colors">Message</label>
                             <textarea value={message} onChange={e => {
                                 setMessage(e.target.value)
                                 if (error.messageError) setError(prev => ({ ...prev, messageError: false }))

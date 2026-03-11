@@ -9,10 +9,10 @@ type Skill = {
 
 const Skills: React.FC = () => {
     return (
-        <section id="skills" className="bg-neutral-100 py-24 px-6">
-            <div className="max-w-6xl mx-auto text-center">
+        <section id="skills" className="bg-[#f0f0f0] py-24 px-6">
+            <div className="max-w-dvw mx-auto text-center">
 
-                
+
                 <h2 className="text-4xl font-semibold text-gray-900">
                     Skills & Tools
                 </h2>
@@ -22,7 +22,7 @@ const Skills: React.FC = () => {
                 </p>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-10">
 
                     {skills.map((skill: Skill) => (
                         <div

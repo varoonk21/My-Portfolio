@@ -39,18 +39,13 @@ export default function Projects() {
     }, []);
 
     return (
-        <section className="w-full bg-white text-[#3d3d3d] dark:bg-[#1e1e1e] dark:text-white md:px-16 py-20 px-6" id='projects'>
+        <section className="w-full bg-white text-neutral-800 dark:bg-[#1e1e1e] dark:text-white md:px-16 py-20 px-6" id='projects'>
             <div className="max-w-7xl mx-auto flex flex-col items-center">
                 <div className="flex flex-col items-center mb-12 sm:mb-16">
-                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative text-[#3d3d3d] dark:text-white">
-                        Featured <span className="text-blue-600 dark:text-blue-500 relative inline-block">
-                            Projects
-                            <svg className="absolute w-full h-3 -bottom-2 left-0 text-blue-600/30 dark:text-blue-500/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
-                            </svg>
-                        </span>
+                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative text-neutral-800 dark:text-white">
+                        Featured Projects
                     </h2>
-                    <p className="mt-5 text-gray-600 dark:text-gray-300 max-w-2xl text-center md:text-lg">
+                    <p className="mt-5 text-gray-600 dark:text-gray-300 max-w-3xl text-center md:text-lg">
                         A showcase of my recent work, personal projects, and open-source contributions.
                     </p>
                 </div>

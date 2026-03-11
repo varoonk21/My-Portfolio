@@ -25,16 +25,16 @@ export default function Hero() {
         <source src="/video/abstract-glass.mp4" type="video/mp4" />
       </video>
 
-    
+
 
       <div />
       {/* Left Social Bar */}
       <div className="absolute left-2 md:left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900 sm:flex">
 
-          <div className="bg-neutral-700 rounded-sm p-2 animate-bounce"></div>
+        <div className="bg-neutral-700 rounded-sm p-2 animate-bounce"></div>
         <div className="w-px h-56 bg-neutral-700" />
-        
-        
+
+
 
         <a href={User.social.linkedin} className="hover:scale-110 transition">
           <Icon icon="mdi:linkedin" width="22" />
@@ -81,10 +81,13 @@ export default function Hero() {
         onClick={() => scrollToSection('#about')}
       >
         <Icon icon="mdi:arrow-down" width="18" />
-        
+
       </motion.div>
+
+      <div className="absolute bottom-8 right-6 sm:right-10 text-neutral-700 text-md ">
+        <i> Scroll down</i>
+      </div>
 
     </section>
   );
 }
-          
