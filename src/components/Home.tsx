@@ -12,7 +12,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="#home" className="relative h-screen max-h-dvh w-full overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative h-screen max-h-dvh w-full overflow-hidden flex items-center justify-center">
 
       {/* Background Video */}
       <video
@@ -29,12 +29,11 @@ export default function Hero() {
 
       <div />
       {/* Left Social Bar */}
-      <div className="absolute left-2 md:left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900  sm:flex">
+      <div className="absolute left-2 md:left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900 sm:flex">
 
-        <div className="flex flex-col items-center gap-1">
-          <div className="bg-neutral-700 rounded-full p-2"></div>
+          <div className="bg-neutral-700 rounded-sm p-2 animate-bounce"></div>
         <div className="w-px h-56 bg-neutral-700" />
-        </div>
+        
         
 
         <a href={User.social.linkedin} className="hover:scale-110 transition">

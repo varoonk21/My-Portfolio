@@ -66,7 +66,7 @@ export default function Contact() {
 
     return (
         <section className=" bg-neutral-100 text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
-            <h2 className="text-4xl text-center font-bold mb-8">Get In Touch</h2>
+            <h2 className="text-4xl text-center font-bold mb-10">Get In Touch</h2>
 
             <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
 

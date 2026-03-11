@@ -53,12 +53,12 @@ export default function Navbar() {
 
                 <div className="h-6 w-px bg-neutral-400 mx-2"></div>
 
-                    <ul className="hidden md:flex items-center justify-center gap-6 flex-1">
+                <ul className="hidden md:flex items-center justify-center gap-6 flex-1">
                     {links.map((link) => (
                         <li key={link.name}>
                             <a
                                 href={link.href}
-                                className="hover:text-neutral-900 text-neutral-800 font-semibold capitalize transition-colors"
+                                className="hover:text-neutral-500 text-neutral-900 font-semibold capitalize transition-colors"
                             >
                                 {link.name}
                             </a>
@@ -100,7 +100,7 @@ export default function Navbar() {
                                         <a
                                             href={link.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 hover:bg-gray-100 rounded-lg transition"
+                                            className="block px-4 py-3 hover:bg-gray-100 rounded-lg transition font-semibold text-neutral-900 hover:shadow-md"
                                         >
                                             {link.name}
                                         </a>
