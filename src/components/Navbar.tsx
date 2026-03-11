@@ -94,8 +94,8 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className="absolute top-full left-0 right-0 mt-4 p-4 bg-neutral-100 border border-neutral-200 rounded-2xl shadow-xl md:hidden"
                         >
-                            <ul className="flex flex-col gap-2">
-                                {links.map((link) => (
+                            <ul className="grid grid-cols-2 items-center justify-center gap-2">
+                                {links.map((link, index) => (
                                     <li key={link.name}>
                                         <a
                                             href={link.href}

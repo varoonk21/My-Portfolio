@@ -46,18 +46,18 @@ export default function ProjectCard({ project }: Props) {
     <div
       onClick={() => window.open(`${project.homepage || project.html_url}`, '_blank')}
       className="cursor-pointer group flex flex-col justify-between items-start transition-all duration-300 hover:-translate-y-1.5 bg-white dark:bg-[#222222] shadow-sm hover:shadow-xl dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/40 border border-gray-100 dark:border-white/5 rounded-2xl overflow-hidden h-full">
-      
-      <div className="w-full relative overflow-hidden aspect-[16/10] bg-gray-100 dark:bg-white/5">
+
+      <div className="w-full relative overflow-hidden aspect-16/10 bg-gray-100 dark:bg-white/5">
         <img
           alt={project.name}
           src={GenerateImageUrl(project.full_name)}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 border-b border-black/5 dark:border-white/5 group-hover:opacity-0 transition-opacity"></div>
       </div>
-      
-      <div className="flex flex-col flex-grow p-5 sm:p-6 w-full">
+
+      <div className="flex flex-col grow p-5 sm:p-6 w-full">
         <div className="flex justify-between items-center w-full mb-3">
           <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 tracking-wider uppercase">
             {formatDate(project.created_at, project.updated_at)}
@@ -66,15 +66,15 @@ export default function ProjectCard({ project }: Props) {
             <Icon icon="heroicons:arrow-up-right-20-solid" width="18" height="18" className="transition-transform group-hover:rotate-45" />
           </a>
         </div>
-        
+
         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-1 capitalize group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {project.name.replaceAll('-', ' ')}
         </h3>
-        
-        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-6 line-clamp-3 flex-grow">
+
+        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-6 line-clamp-3 grow">
           {project.description || "No description provided for this project."}
         </p>
-        
+
         <div className="flex flex-wrap gap-2 mt-auto pt-2">
           {project.topics.filter(t => t !== 'include').slice(0, 4).map(tech => (
             <span key={tech} className="px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-[#333333] dark:text-gray-300 capitalize transition-colors group-hover:bg-blue-50 group-hover:text-blue-700 dark:group-hover:bg-blue-500/20 dark:group-hover:text-blue-300">
