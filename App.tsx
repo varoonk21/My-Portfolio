@@ -9,6 +9,7 @@ import Contact from './src/components/Contact.tsx'
 import './global.css'
 import Achievements from './src/components/Achievements.tsx'
 
+
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
       <Projects />
       <Experience />
       <Achievements />
+
       <Contact />
     </>
   )

@@ -1,0 +1,26 @@
+/* Hide YouTube branding with CSS cropping */
+.plyr__video-embed iframe {
+    top: -50%;
+    height: 200%;
+    pointer-events: none;
+}
+
+.plyr__video-embed iframe.playing {
+    pointer-events: auto;
+}
+
+.plyr__video-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.plyr--video .plyr__controls {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+}
+
+/* Customize colors */
+:root {
+    --plyr-color-main: #f00;
+    --plyr-video-background: #000;
+}

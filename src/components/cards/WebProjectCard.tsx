@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import Projects from "../Projects";
 interface projectInterface {
   html_url: string,
   created_at: string,
@@ -13,7 +12,7 @@ interface projectInterface {
 interface Props {
   project: projectInterface
 }
-export default function ProjectCard({ project }: Props) {
+export default function WebProjectCard({ project }: Props) {
 
   function GenerateImageUrl(repo: string) {
     return `https://raw.githubusercontent.com/${repo}/main/assets/preview.webp`
@@ -45,9 +44,10 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div
       onClick={() => window.open(`${project.homepage || project.html_url}`, '_blank')}
-      className="cursor-pointer group flex flex-col justify-between items-start transition-all duration-300 hover:-translate-y-1.5 bg-white dark:bg-[#222222] shadow-sm hover:shadow-xl dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/40 border border-gray-100 dark:border-white/5 rounded-2xl overflow-hidden h-full">
+      className="cursor-pointer group flex flex-col justify-between items-start transition-all duration-300 hover:-translate-y-1.5 bg-white dark:bg-[#222222] shadow-sm 
+      hover:shadow-xl dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/40 border border-gray-100 dark:border-white/5 rounded-2xl overflow-hidden h-full">
 
-      <div className="w-full relative overflow-hidden aspect-16/10 bg-gray-100 dark:bg-white/5">
+      <div className="w-full relative overflow-hidden aspect-16/10 bg-neutral-100 dark:bg-white/5">
         <img
           alt={project.name}
           src={GenerateImageUrl(project.full_name)}
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex flex-col grow p-5 sm:p-6 w-full">
         <div className="flex justify-between items-center w-full mb-3">
-          <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 tracking-wider uppercase">
+          <h3 className="text-[11px] sm:text-xs font-bold text-neutral-500 dark:text-blue-400 tracking-wider uppercase">
             {formatDate(project.created_at, project.updated_at)}
           </h3>
           <a href={project.homepage || project.html_url} onClick={e => e.stopPropagation()} target="_blank" className="p-1.5 sm:p-2 rounded-full bg-gray-50 dark:bg-white/5 text-gray-500 dark:text-gray-400 hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-colors">
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: Props) {
           </a>
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-1 capitalize group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <h3 className="text-xl sm:text-2xl font-bold text-neutral-800 dark:text-white mb-2 line-clamp-1 capitalize group-hover:text-neutral-900 dark:group-hover:text-blue-400 transition-colors">
           {project.name.replaceAll('-', ' ')}
         </h3>
 
@@ -77,7 +77,8 @@ export default function ProjectCard({ project }: Props) {
 
         <div className="flex flex-wrap gap-2 mt-auto pt-2">
           {project.topics.filter(t => t !== 'include').slice(0, 4).map(tech => (
-            <span key={tech} className="px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-[#333333] dark:text-gray-300 capitalize transition-colors group-hover:bg-blue-50 group-hover:text-blue-700 dark:group-hover:bg-blue-500/20 dark:group-hover:text-blue-300">
+            <span key={tech} className="px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold bg-neutral-100 text-neutral-700 dark:bg-[#333333]
+             dark:text-neutral-300 capitalize transition-colors group-hover:bg-neutral-800 group-hover:text-white dark:group-hover:bg-blue-500/20 dark:group-hover:text-blue-300">
               {tech.replaceAll('-', ' ')}
             </span>
           ))}
