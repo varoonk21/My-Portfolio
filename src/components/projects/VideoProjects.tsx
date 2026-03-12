@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Icon } from '@iconify/react';
-import Player from '../Player';
+import { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
+import Player from "../Player";
 
 // @ts-ignore
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from "motion/react";
 
-type VideoType = 'reels' | 'videos' | 'motion';
+type VideoType = "reels" | "videos" | "motion";
 
 type VideoItem = {
     id: { videoId: string };
@@ -14,74 +14,77 @@ type VideoItem = {
         description: string;
         publishedAt: string;
         thumbnails: { medium: { url: string } };
-        categoryId?: string;
+        channelTitle?: string;
     };
-    type?: VideoType;
+    type: VideoType;
 };
 
+// Sub-tab definitions
 const VIDEO_SUB_TABS: { id: VideoType; label: string; icon: string }[] = [
-    { id: 'reels', label: 'Reels', icon: 'heroicons:film' },
-    { id: 'videos', label: 'Videos', icon: 'heroicons:play-circle' },
-    { id: 'motion', label: 'Motion', icon: 'heroicons:sparkles' },
+    { id: "reels", label: "Reels", icon: "heroicons:film" },
+    { id: "videos", label: "Videos", icon: "heroicons:play-circle" },
+    { id: "motion", label: "Motion", icon: "heroicons:sparkles" },
 ];
 
-const VIDEO_CATEGORIES: Record<VideoType, string[]> = {
-    reels: [],
-    videos: [],
-    motion: [],
+// Map each sub-tab to a playlist ID
+const VIDEO_PLAYLISTS: Record<VideoType, string> = {
+    reels: "PLW27No92U7yTvWma7r017jhd9UJz-_2gG",   // Replace with your Reels playlist ID
+    videos: "PLW27No92U7ySzZdrv44y6HRPTVJ7-hR_H",   // Replace with your Long Videos playlist ID
+    motion: "", // Replace with your Motion Graphics playlist ID
 };
 
 export default function VideoProjects() {
     const [videos, setVideos] = useState<VideoItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [activeSubTab, setActiveSubTab] = useState<VideoType>('reels');
+    const [activeSubTab, setActiveSubTab] = useState<VideoType>("reels");
 
+    const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+
+    // Fetch videos for the active playlist
     useEffect(() => {
         const fetchVideos = async () => {
             try {
-                const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-                const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
-                const URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=30&type=video`;
+                setLoading(true);
+                setError(false);
+
+                const playlistId = VIDEO_PLAYLISTS[activeSubTab];
+                const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=30&playlistId=${playlistId}&key=${API_KEY}`;
+
                 const response = await fetch(URL);
-                if (!response.ok) throw new Error('Failed to fetch');
+                if (!response.ok) throw new Error("Failed to fetch playlist videos");
                 const data = await response.json();
-                console.log(data);
 
-                // Tag each video with its type based on VIDEO_CATEGORIES mapping
-                const tagged: VideoItem[] = (data.items || []).map((item: VideoItem) => {
-                    const id = item.id.videoId;
-                    let type: VideoType = 'videos';
-                    if (VIDEO_CATEGORIES.reels.includes(id)) type = 'reels';
-                    else if (VIDEO_CATEGORIES.motion.includes(id)) type = 'motion';
-                    else type = 'videos';
-                    return { ...item, type };
-                });
+                const vids: VideoItem[] = (data.items || []).map((item: any) => ({
+                    id: { videoId: item.snippet.resourceId.videoId },
+                    snippet: item.snippet,
+                    type: activeSubTab,
+                }));
 
-                setVideos(tagged);
-            } catch {
+                setVideos(vids);
+            } catch (err) {
+                console.log(err);
                 setError(true);
             } finally {
                 setLoading(false);
             }
         };
-        fetchVideos();
-    }, []);
 
-    const filteredVideos = videos.filter(v => v.type === activeSubTab);
+        fetchVideos();
+    }, [activeSubTab, API_KEY]);
 
     return (
         <div className="w-full">
-            {/* Sub-tabs: Reels / Videos / Motion */}
+            {/* Sub-tabs */}
             <div className="flex gap-1 mb-8 bg-neutral-100 dark:bg-white/5 p-1 rounded-xl w-fit">
-                {VIDEO_SUB_TABS.map(tab => (
+                {VIDEO_SUB_TABS.map((tab) => (
                     <button
                         key={tab.id}
                         onClick={() => setActiveSubTab(tab.id)}
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer
-                            ${activeSubTab === tab.id
-                                ? 'bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm'
-                                : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white'
+              ${activeSubTab === tab.id
+                                ? "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm"
+                                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white"
                             }`}
                     >
                         <Icon icon={tab.icon} width="15" />
@@ -106,9 +109,9 @@ export default function VideoProjects() {
             ) : error ? (
                 <div className="flex flex-col items-center gap-3 py-16 text-neutral-500 dark:text-neutral-400">
                     <Icon icon="heroicons:exclamation-triangle" width="40" />
-                    <p className="text-sm">Failed to load videos. Please check your API key.</p>
+                    <p className="text-sm">Failed to load videos. Please check your API key or playlist IDs.</p>
                 </div>
-            ) : filteredVideos.length === 0 ? (
+            ) : videos.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 py-20 text-neutral-400 dark:text-neutral-500">
                     <div className="w-16 h-16 rounded-full bg-neutral-100 dark:bg-white/5 flex items-center justify-center">
                         <Icon icon="heroicons:video-camera-slash" width="28" />
@@ -128,7 +131,7 @@ export default function VideoProjects() {
                         transition={{ duration: 0.25 }}
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
                     >
-                        {filteredVideos.map(video => (
+                        {videos.map((video) => (
                             <div
                                 key={video.id.videoId}
                                 className="group rounded-2xl overflow-hidden bg-white dark:bg-[#222222] border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-1.5"
@@ -139,7 +142,7 @@ export default function VideoProjects() {
                                         {video.snippet.title}
                                     </h3>
                                     <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1.5">
-                                        {new Date(video.snippet.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                        {new Date(video.snippet.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                                     </p>
                                 </div>
                             </div>

@@ -15,8 +15,8 @@ export default function Player({ videoId }: { videoId: string }) {
         playerRef.current = new Plyr(containerRef.current, {
             iconUrl: 'https://cdn.plyr.io/1.8.2/plyr.svg',
             controls: [
-                'play-large', 'restart', 'rewind', 'play', 'fast-forward', 'settings',
-                'progress', 'current-time', 'duration', 'mute', 'pip', 'airplay', 'fullscreen'
+                'play-large', 'restart', 'rewind', 'play', 'fast-forward',
+                'progress', 'current-time', 'duration', 'mute', 'settings', 'pip', 'airplay', 'fullscreen'
             ],
             settings: ['captions', 'quality', 'speed', 'loop'],
             speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 4] },
