@@ -61,11 +61,11 @@ export default function Experience() {
                 {/* Timeline */}
                 <div className="relative pt-4">
 
-                    <div className="absolute left-[24px] md:left-1/2 md:-translate-x-1/2 top-4 bottom-0 w-[2px] bg-neutral-200 z-0" />
+                    <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-4 bottom-0 w-0.5 bg-neutral-200 z-0" />
 
                     <motion.div
                         style={{ height: lineHeight }}
-                        className="absolute left-[24px] md:left-1/2 md:-translate-x-1/2 top-4 w-[2px] bg-neutral-500 origin-top z-0"
+                        className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-4 w-0.5 bg-neutral-500 origin-top z-0"
                     />
 
                     <div className="relative z-10 space-y-8 md:space-y-6">
@@ -83,13 +83,13 @@ export default function Experience() {
                                     className={`relative flex w-full items-start ${isLeft ? "md:justify-start" : "md:justify-end"}`}
                                 >
 
-                                    <div className="absolute left-[24px] md:left-1/2 -translate-x-1/2 top-7 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-neutral-800 border-[3px] md:border-4 border-[#f0f0f0] shadow-md z-20 box-content" />
+                                    <div className="absolute left-6 md:left-1/2 -translate-x-1/2 top-7 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-neutral-800 border-[3px] md:border-4 border-[#f0f0f0] shadow-md z-20 box-content" />
 
                                     {/* Card Container */}
-                                    <div className={`w-full md:w-1/2 pl-[56px] sm:pl-[64px] md:pl-0 pt-0 ${isLeft ? "md:pr-10 lg:pr-14" : "md:pl-10 lg:pl-14"}`}>
+                                    <div className={`w-full md:w-1/2 pl-14 sm:pl-16 md:pl-0 pt-0 ${isLeft ? "md:pr-10 lg:pr-14" : "md:pl-10 lg:pl-14"}`}>
                                         <div className="bg-white border border-neutral-200 rounded-2xl p-5 sm:p-6 lg:p-7 shadow-sm hover:shadow-lg transition-all duration-300 relative group">
 
-                                            <div className={`hidden md:block absolute top-[40px] w-10 lg:w-14 h-[2px] bg-neutral-200 group-hover:bg-neutral-300 transition-colors duration-300 z-0 ${isLeft ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`} />
+                                            <div className={`hidden md:block absolute top-10 w-10 lg:w-14 h-0.5 bg-neutral-200 group-hover:bg-neutral-300 transition-colors duration-300 z-0 ${isLeft ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`} />
 
                                             {/* Content */}
                                             <div className="relative z-10 flex flex-col xl:flex-row xl:items-start justify-between gap-3 mb-2">
@@ -119,7 +119,7 @@ export default function Experience() {
                                             <ul className="space-y-3 text-sm sm:text-[15px] text-neutral-600">
                                                 {exp.bullets.map((bullet, i) => (
                                                     <li key={i} className="flex gap-3 items-start relative">
-                                                        <span className="min-w-[6px] h-[6px] bg-neutral-300 group-hover:bg-blue-400 transition-colors rounded-full mt-[8px]"></span>
+                                                        <span className="min-w-1.5 h-1.5 bg-neutral-300 group-hover:bg-blue-400 transition-colors rounded-full mt-2"></span>
                                                         <span className="leading-relaxed">{bullet}</span>
                                                     </li>
                                                 ))}
@@ -144,8 +144,8 @@ export default function Experience() {
 
                     {/* END DOT */}
                     <div className="relative w-full h-24 md:h-32 mt-4 md:mt-2 z-10">
-                        <div className="absolute left-[24px] md:left-1/2 -bottom-4 -translate-x-1/2 w-3 h-3 md:w-3.5 md:h-3.5 rounded-full border-4 border-[#f0f0f0] bg-neutral-800 z-10 box-content mt-[-2px]"></div>
-                        <p className="absolute left-[56px] sm:left-[64px] md:left-1/2 md:-translate-x-1/2 -bottom-4 sm:-bottom-10  text-[11px] md:text-xs tracking-[0.2em] font-bold text-neutral-400 uppercase whitespace-nowrap">
+                        <div className="absolute left-6 md:left-1/2 -bottom-4 -translate-x-1/2 w-3 h-3 md:w-3.5 md:h-3.5 rounded-full border-4 border-[#f0f0f0] bg-neutral-800 z-10 box-content -mt-0.5"></div>
+                        <p className="absolute left-14 sm:left-16 md:left-1/2 md:-translate-x-1/2 -bottom-4 sm:-bottom-10  text-[11px] md:text-xs tracking-[0.2em] font-bold text-neutral-400 uppercase whitespace-nowrap">
                             The Journey Continues…
                         </p>
                     </div>
