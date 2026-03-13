@@ -11,7 +11,10 @@ export default function Achievements() {
 
   return (
     <section id="achievements" className="min-h-screen w-full text-[#3d3d3d] bg-[#f8f8f8] dark:bg-[#2a2a2a]  dark:text-white md:px-16 py-16 px-6" >
-      <h2 className="text-4xl font-bold"><u>Achieve</u>ments</h2>
+      <h2 className="text-4xl md:text-5xl cabinet font-bold">Achievements</h2>
+      <div className="text-xl cabinet text-neutral-600 dark:text-neutral-300 mt-4">
+        Here are some of my notable achievements and certificates.
+      </div>
       {/* container */}
       <div className="mt-14 grid md:grid-cols-3 grid-cols-1 gap-7">
         {/* names */}

@@ -66,9 +66,9 @@ export default function Contact() {
 
     return (
         <section className=" bg-[#f0f0f0] text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
-            <h2 className="text-5xl cabinet text-start font-bold">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl cabinet text-start font-bold">Get In Touch</h2>
 
-             <div className="h-1 w-48  bg-neutral-900 rounded-full " />
+             <div className="h-1 w-36 md:w-48  bg-neutral-900 rounded-full " />
 
             <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
 
