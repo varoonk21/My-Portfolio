@@ -1,16 +1,62 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my skills, projects, and professional experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design** - Optimized for all device sizes
+- **Interactive UI** - Smooth animations and engaging user experience
+- **Project Showcase** - Display of web and video projects
+- **Skills & Experience** - Comprehensive overview of technical expertise
+- **Contact Form** - Easy way for visitors to get in touch
+- **Performance Optimized** - Built with Vite for fast load times
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** - UI library
+- **TypeScript** - Type-safe development
+- **Vite** - Lightning-fast build tool
+- **CSS** - Custom styling
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to the project
+cd My_portfolio
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+The application will start at `http://localhost:5173`
+
+### Build
+
+```bash
+npm run build
+```
+
+## Sections
+
+- **Home** - Welcome section with call-to-action
+- **About** - Personal introduction and background
+- **Skills** - Technical skills and expertise
+- **Experience** - Professional work history
+- **Projects** - Portfolio of completed work
+- **Achievements** - Recognition and accomplishments
+- **Contact** - Get in touch form
