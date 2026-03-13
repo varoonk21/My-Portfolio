@@ -8,14 +8,14 @@ const About: React.FC = () => {
         <section id="about" className="bg-[#f0f0f0] py-24 px-6 w-full">
 
             <div className="flex flex-col items-center justify-center mb-10 sm:mb-20 ">
-                <span className="text-4xl font-bold text-neutral-900">About Me</span>
-                <span className="text-md font-light text-neutral-900">My Introduction</span>
+                <span className="text-5xl cabinet font-bold text-neutral-900">About Me</span>
+                <span className="text-lg cabinet font-light text-neutral-700">My Introduction</span>
             </div>
             <div className="w-full grid md:grid-cols-2 gap-16 items-center">
 
                 <div >
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
+                    <h2 className="text-4xl md:text-5xl cabinet font-bold text-neutral-900 leading-tight">
                         Your Creative <br /> Developer Partner
                     </h2>
 

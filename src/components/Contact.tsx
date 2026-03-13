@@ -66,14 +66,15 @@ export default function Contact() {
 
     return (
         <section className=" bg-[#f0f0f0] text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
-            <h2 className="text-4xl text-center font-bold mb-10">Get In Touch</h2>
+            <h2 className="text-5xl cabinet text-start font-bold">Get In Touch</h2>
+
+             <div className="h-1 w-48  bg-neutral-900 rounded-full " />
 
             <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
 
                 {/* Contact Informantion */}
                 <div className="flex-1">
-                    <h3 className="text-2xl font-bold">Contact Information</h3>
-
+                    
                     <p className="text-lg my-8 text-neutral-600 leading-relaxed">Ready to start your next project? I'd love to hear about your ideas and discuss how we can bring them to life.</p>
 
                     {/* email */}

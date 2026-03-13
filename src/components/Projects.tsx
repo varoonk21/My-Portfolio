@@ -32,7 +32,6 @@ export default function Projects() {
         >
             <div className="max-w-full flex flex-col">
 
-                {/* Header */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab + '-header'}
@@ -42,10 +41,10 @@ export default function Projects() {
                         transition={{ duration: 0.2 }}
                         className="mb-10"
                     >
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-800 dark:text-white">
+                        <h2 className="text-4xl md:text-5xl cabinet font-extrabold tracking-tight text-neutral-800 dark:text-white">
                             {TAB_DESCRIPTIONS[activeTab].heading}
                         </h2>
-                        <p className="mt-4 text-neutral-500 dark:text-neutral-400 max-w-2xl text-sm md:text-base leading-relaxed">
+                        <p className="mt-4 cabinet text-lg text-neutral-700 max-w-2xl leading-relaxed">
                             {TAB_DESCRIPTIONS[activeTab].sub}
                         </p>
                     </motion.div>
@@ -57,7 +56,7 @@ export default function Projects() {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`relative pb-3.5 text-sm font-semibold tracking-wide transition-colors duration-200 cursor-pointer
+                            className={`relative pb-3.5 text-md font-semibold tracking-wide transition-colors duration-200 cursor-pointer
                                 ${activeTab === tab.id
                                     ? 'text-neutral-900 dark:text-white'
                                     : 'text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300'

@@ -50,10 +50,10 @@ export default function Experience() {
                     <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-neutral-500 border border-neutral-200 bg-white/50 px-4 py-1.5 rounded-full uppercase shadow-sm">
                         Career Journey
                     </span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-4 md:mt-5 text-neutral-900 tracking-tight">
+                    <h2 className="text-4xl cabinet md:text-5xl lg:text-6xl font-extrabold mt-4 md:mt-5 text-neutral-900 tracking-tight">
                         Experience
                     </h2>
-                    <p className="mt-3 md:mt-4 text-neutral-500 font-medium text-sm md:text-base max-w-md mx-auto">
+                    <p className="mt-3 md:mt-4 cabinet text-lg text-neutral-700 font-medium max-w-md mx-auto">
                         A timeline of my professional journey.
                     </p>
                 </div>
@@ -92,7 +92,7 @@ export default function Experience() {
                                             <div className={`hidden md:block absolute top-10 w-10 lg:w-14 h-0.5 bg-neutral-200 group-hover:bg-neutral-300 transition-colors duration-300 z-0 ${isLeft ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`} />
 
                                             {/* Content */}
-                                            <div className="relative z-10 flex flex-col xl:flex-row xl:items-start justify-between gap-3 mb-2">
+                                            <div className="relative z-10 flex flex-row xl:items-start justify-between gap-3 mb-2">
                                                 <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 leading-tight">
                                                     {exp.company}
                                                 </h3>
@@ -104,7 +104,7 @@ export default function Experience() {
                                                 )}
                                             </div>
 
-                                            <p className="text-blue-600 dark:text-blue-500 font-semibold text-sm sm:text-base mb-3">
+                                            <p className="text-neutral-600 dark:text-blue-500 font-semibold text-sm sm:text-base mb-3">
                                                 {exp.position}
                                             </p>
 
@@ -119,7 +119,7 @@ export default function Experience() {
                                             <ul className="space-y-3 text-sm sm:text-[15px] text-neutral-600">
                                                 {exp.bullets.map((bullet, i) => (
                                                     <li key={i} className="flex gap-3 items-start relative">
-                                                        <span className="min-w-1.5 h-1.5 bg-neutral-300 group-hover:bg-blue-400 transition-colors rounded-full mt-2"></span>
+                                                        <span className="min-w-1.5 h-1.5 bg-neutral-300 group-hover:bg-neutral-900 transition-colors rounded-full mt-2"></span>
                                                         <span className="leading-relaxed">{bullet}</span>
                                                     </li>
                                                 ))}
@@ -129,7 +129,9 @@ export default function Experience() {
                                                 {exp.skills.map((skill) => (
                                                     <span
                                                         key={skill}
-                                                        className="px-3 py-1.5 bg-neutral-50 text-neutral-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded-md border border-neutral-200 hover:bg-white hover:border-neutral-400 hover:text-neutral-900 transition-all duration-200"
+                                                        className="px-3 py-1.5 bg-neutral-50 text-neutral-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded-md border 
+                                                        group-hover:shadow-sm
+                                                        border-neutral-200 hover:bg-neutral-800 hover:border-neutral-400 hover:text-white transition-all duration-200"
                                                     >
                                                         {skill}
                                                     </span>

@@ -13,11 +13,11 @@ const Skills: React.FC = () => {
             <div className="max-w-dvw mx-auto text-center">
 
 
-                <h2 className="text-4xl font-semibold text-gray-900">
+                <h2 className="text-5xl cabinet font-bold text-neutral-900">
                     Skills & Tools
                 </h2>
 
-                <p className="mt-4 text-gray-600 max-w-3xl mx-auto ">
+                <p className="mt-4 cabinet text-lg text-neutral-700 max-w-3xl mx-auto ">
                     Technologies and creative tools I use to build modern web experiences and digital content.
                 </p>
 

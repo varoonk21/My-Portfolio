@@ -57,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-lg text-neutral-900 mb-4"
+          className="text-lg cabinet text-neutral-900 mb-4"
         >
           Hi! I'm Varoon Kumar
         </motion.p>
@@ -66,7 +66,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-7xl   lg:text-8xl font-semibold text-neutral-900 leading-tight"
+          className="text-4xl md:text-7xl cabinet lg:text-8xl font-semibold md:font-normal text-neutral-900 leading-tight"
         >
           Frontend Developer <br />
           & Video Editor
@@ -84,7 +84,7 @@ export default function Hero() {
 
       </motion.div>
 
-      <div className="absolute bottom-8 right-6 sm:right-10 text-neutral-700 text-md ">
+      <div className="absolute bottom-8 right-6 sm:right-10 cabinet text-neutral-700 text-md ">
         <i> Scroll down</i>
       </div>
 

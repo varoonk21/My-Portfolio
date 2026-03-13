@@ -68,8 +68,8 @@ export default function Navbar() {
 
                 <div className="hidden md:block h-6 w-px bg-neutral-400 ml-2 mr-6"></div>
 
-                <button className="hidden md:block bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                    <a href="#contact" className="flex items-center gap-2">
+                <button className="hidden md:block bg-neutral-900 text-white px-4 py-2 rounded-lg hover:bg-neutral-800 transition-colors group">
+                    <a href="#contact" className="flex items-center gap-2 group-hover:scale-105 transition-transform">
                         Contact
                     </a>
                 </button>
