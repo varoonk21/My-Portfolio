@@ -8,6 +8,7 @@ import Experience from './src/components/sections/Experience.tsx'
 import Contact from './src/components/sections/Contact.tsx'
 import './global.css'
 import Achievements from './src/components/sections/Achievements.tsx'
+import ResumeGenerator from './src/components/ResumeGenerator.tsx';
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
       <Projects />
       <Experience />
       <Achievements />
-
       <Contact />
+      <ResumeGenerator />
     </>
   )
 }

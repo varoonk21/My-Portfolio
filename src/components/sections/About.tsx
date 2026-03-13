@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import { Icon } from "@iconify/react";
 import User from "../../data/user.json";
+import ResumeGenerator from "../ResumeGenerator";
 
 
 const About: React.FC = () => {
+    const resumeRef = useRef<HTMLDivElement>(null);
+
+    const handleDownload = useReactToPrint({
+        contentRef: resumeRef,
+        documentTitle: "Varoon-Kumar-Resume",
+    });
     return (
         <section id="about" className="bg-[#f0f0f0] py-24 px-6 w-full">
 
@@ -33,10 +41,15 @@ const About: React.FC = () => {
                             Hire Me
                         </a>
 
-                        <button className="active:scale-[0.98] hover:opacity-90 hover:scale-105 font-medium bg-neutral-900 text-white dark:bg-white dxlark:text-neutral-800 px-6 py-3 rounded-xl flex items-center justify-center transition-all shadow-md group gap-2">
+                        <button
+                            onClick={handleDownload}
+                            className="active:scale-[0.98] hover:opacity-90 hover:scale-105 font-medium bg-neutral-900 text-white dark:bg-white dark:text-neutral-800 px-6 py-3 rounded-xl flex items-center justify-center transition-all shadow-md group gap-2">
                             <Icon icon="mdi:file-document" width="20" />
                             Resume
                         </button>
+                        <div style={{ display: "none" }}>
+                            <ResumeGenerator ref={resumeRef} />
+                        </div>
                     </div>
 
 

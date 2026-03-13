@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "type": "Education",
         "time": "2022 - 2026",
         "name": "Bachelor's in Software Engineering",
         "place": "Mehran University of Engineering and Technology, Jamshoro",
@@ -15,6 +16,7 @@
     },
     {
         "id": 2,
+        "type": "Achievement",
         "time": "Jan - Feb 2025",
         "name": "Hack for Humanity - 2025",
         "place": "DevPost",
@@ -29,6 +31,7 @@
     },
     {
         "id": 3,
+        "type": "Certification",
         "time": "2023",
         "name": "Digital Marketing Certificate",
         "place": "National Freelancing Training Program (NFTP)",
@@ -43,6 +46,7 @@
     },
     {
         "id": 4,
+        "type": "Achievement",
         "time": "2024 - Present",
         "name": "SES Head Director – Videography",
         "place": "Software Engineering Society (MUET)",

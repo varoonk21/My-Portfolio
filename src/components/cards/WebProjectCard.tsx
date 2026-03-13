@@ -1,4 +1,6 @@
 import { Icon } from "@iconify/react";
+import formatDate from "../../utils/formatDate";
+
 interface projectInterface {
   html_url: string,
   created_at: string,
@@ -17,30 +19,7 @@ export default function WebProjectCard({ project }: Props) {
   function GenerateImageUrl(repo: string) {
     return `https://raw.githubusercontent.com/${repo}/main/assets/preview.webp`
   }
-
-  function formatDate(start: string, end: string): string {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
-
-    const startStr = startDate.toLocaleDateString('en-US', {
-      month: 'short',
-      year: 'numeric',
-    });
-
-    const endStr = endDate.toLocaleDateString('en-US', {
-      month: 'short',
-      year: 'numeric',
-    });
-
-    const isPresent = Math.abs(new Date().getTime() - endDate.getTime()) < 1000 * 60 * 60 * 24 * 7;
-    if (isPresent) return `${startStr} – Present`;
-
-    const sameMonth = startDate.getMonth() === endDate.getMonth() && startDate.getFullYear() === endDate.getFullYear();
-    if (sameMonth) return startStr;
-
-
-    return `${startStr} – ${endStr}`;
-  }
+  
   return (
     <div
       onClick={() => window.open(`${project.homepage || project.html_url}`, '_blank')}
