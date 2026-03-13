@@ -28,8 +28,8 @@ const VIDEO_SUB_TABS: { id: VideoType; label: string; icon: string }[] = [
 
 // Map each sub-tab to a playlist ID
 const VIDEO_PLAYLISTS: Record<VideoType, string> = {
-    reels: "PLW27No92U7yTvWma7r017jhd9UJz-_2gG",   // Replace with your Reels playlist ID
-    videos: "PLW27No92U7ySzZdrv44y6HRPTVJ7-hR_H",   // Replace with your Long Videos playlist ID
+    reels: "",   // Replace with your Reels playlist ID
+    videos: "",   // Replace with your Long Videos playlist ID
     motion: "", // Replace with your Motion Graphics playlist ID
 };
 

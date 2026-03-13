@@ -12,9 +12,6 @@ interface Props {
   setCurrentId: (id: number) => void;
 }
 
-// This component is no longer used in the redesigned layout
-// Kept for backwards compatibility if needed
-
 export default function AchivementName({ achievement, isActive, setCurrentId }: Props) {
   return (
     <motion.div
@@ -27,7 +24,7 @@ export default function AchivementName({ achievement, isActive, setCurrentId }: 
       }`}
     >
       <h3 className="text-base font-semibold">{achievement.name}</h3>
-      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{achievement.place}</p>
+      <p className="hidden sm:block text-sm text-neutral-600 dark:text-neutral-300 mt-1">{achievement.place}</p>
     </motion.div>
   );
 }

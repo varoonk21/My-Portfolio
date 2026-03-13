@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import EmailSuccess from './cards/EmailSuccess';
-import User from "../data/user.json";
+import EmailSuccess from '../cards/EmailSuccess';
+import User from "../../data/user.json";
 
 interface ErrorInterface {
     nameError: boolean,

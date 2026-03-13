@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import User from "../data/user.json";
+import User from "../../data/user.json";
 
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);

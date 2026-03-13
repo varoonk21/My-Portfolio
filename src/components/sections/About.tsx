@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import User from "../data/user.json";
+import User from "../../data/user.json";
 
 
 const About: React.FC = () => {

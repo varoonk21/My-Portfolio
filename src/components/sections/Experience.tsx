@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import experiencesData from "../data/experiences.json";
+import experiencesData from "../../data/experiences.json";
 
 interface ExperienceItem {
     id: string | number;

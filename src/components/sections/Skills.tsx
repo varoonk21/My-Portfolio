@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import skills from "../data/skills.json";
+import skills from "../../data/skills.json";
 
 type Skill = {
     name: string;

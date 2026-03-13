@@ -1,8 +1,8 @@
 import { useState } from 'react';
 // @ts-ignore
 import { motion, AnimatePresence } from 'motion/react';
-import WebProjects from './projects/WebProjects';
-import VideoProjects from './projects/VideoProjects';
+import WebProjects from '../projects/WebProjects';
+import VideoProjects from '../projects/VideoProjects';
 
 type MainTab = 'web' | 'video';
 
