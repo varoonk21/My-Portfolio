@@ -8,17 +8,35 @@ const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const fetchVideos = async () => {
+  const fetchVideos = async () => {
+    try {
       const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
       const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
+      
       const URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=12&type=video`;
 
-      const response = await fetch(URL);
+      const response = await fetch(URL, {
+        headers: {
+          // This tells Google the request is coming from your domain
+          'Referer': 'https://varoon.site'  // Make sure this matches exactly
+        }
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('YouTube API Error:', errorData);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
       setVideos(data.items);
-    };
-    fetchVideos();
-  }, []);
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+    }
+  };
+  
+  fetchVideos();
+}, []);
 
   return (
     <div className="container mx-auto p-6">

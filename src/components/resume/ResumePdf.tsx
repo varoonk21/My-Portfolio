@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
 
     section: {
-        marginTop: 10
+        marginTop: 6
     },
 
     sectionTitle: {
@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         borderBottom: "1.5px solid black",
         paddingBottom: 2,
-        marginBottom: 4
+        marginBottom: 8
     },
-    
+
     summary: {
         fontSize: 10,
     },
@@ -174,7 +174,7 @@ export default function ResumePDF({ projects }: Props) {
                         </Link>
                     </View>
 
-                    
+
                 </View>
 
                 {/* SUMMARY */}
@@ -242,9 +242,10 @@ export default function ResumePDF({ projects }: Props) {
                             <View key={project.name} style={{ marginBottom: 5 }}>
 
                                 <View style={styles.rowBetween}>
-                                    <Text style={styles.projectTitle}>
-                                        {project.name.replaceAll("-", " ")}
-                                    </Text>
+
+                                    <Link src={normalizeLink(project.homepage || project.html_url)}>
+                                        <Text style={styles.projectTitle}>{project.name.replaceAll("-", " ")}</Text>
+                                    </Link>
 
                                     <Text style={styles.smallDate}>
                                         {formatDate(project.created_at, project.updated_at)}

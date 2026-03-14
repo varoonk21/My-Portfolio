@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-lg cabinet text-neutral-900 mb-4"
+          className="text-xl cabinet text-neutral-900 mb-4"
         >
           Hi! I'm Varoon Kumar
         </motion.p>

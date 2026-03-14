@@ -30,7 +30,8 @@ export default function Navbar() {
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
         { name: "Experience", href: "#experience" },
-        { name: "Achievements", href: "#achievements" }
+        { name: "Achievements", href: "#achievements" },
+        { name: "Contact", href: "#contact" }
     ];
 
     const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function Navbar() {
                 <div className="h-6 w-px bg-neutral-400 mx-2"></div>
 
                 <ul className="hidden md:flex items-center justify-center gap-6 flex-1">
-                    {links.map((link) => (
+                    {links.filter(link => link.name !== "Contact").map((link) => (
                         <li key={link.name}>
                             <a
                                 href={link.href}
@@ -62,7 +63,8 @@ export default function Navbar() {
                             >
                                 {link.name}
                             </a>
-                        </li>
+                            
+                        </li>                       
                     ))}
                 </ul>
 
