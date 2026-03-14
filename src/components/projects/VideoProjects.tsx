@@ -28,8 +28,8 @@ const VIDEO_SUB_TABS: { id: VideoType; label: string; icon: string }[] = [
 
 // Map each sub-tab to a playlist ID
 const VIDEO_PLAYLISTS: Record<VideoType, string> = {
-    reels: "",   // Replace with your Reels playlist ID
-    videos: "",   // Replace with your Long Videos playlist ID
+    reels: "PLW27No92U7yTvWma7r017jhd9UJz-_2gG",   // Replace with your Reels playlist ID
+    videos: "PLW27No92U7ySzZdrv44y6HRPTVJ7-hR_H",   // Replace with your Long Videos playlist ID
     motion: "", // Replace with your Motion Graphics playlist ID
 };
 
@@ -49,11 +49,27 @@ export default function VideoProjects() {
                 setError(false);
 
                 const playlistId = VIDEO_PLAYLISTS[activeSubTab];
+
+                // Skip fetch if no playlist ID is configured yet
+                if (!playlistId) {
+                    setVideos([]);
+                    setLoading(false);
+                    return;
+                }
+
+                if (!API_KEY) {
+                    throw new Error("Missing YouTube API key.");
+                }
+
                 const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=30&playlistId=${playlistId}&key=${API_KEY}`;
 
                 const response = await fetch(URL);
-                if (!response.ok) throw new Error("Failed to fetch playlist videos");
                 const data = await response.json();
+
+                if (!response.ok) {
+                    const message = data?.error?.message || "Failed to fetch playlist videos";
+                    throw new Error(message);
+                }
 
                 const vids: VideoItem[] = (data.items || []).map((item: any) => ({
                     id: { videoId: item.snippet.resourceId.videoId },
@@ -63,7 +79,7 @@ export default function VideoProjects() {
 
                 setVideos(vids);
             } catch (err) {
-                console.log(err);
+                console.error(err);
                 setError(true);
             } finally {
                 setLoading(false);

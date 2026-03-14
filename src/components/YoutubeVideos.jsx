@@ -6,37 +6,61 @@ import Player from "./Player";
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-  const fetchVideos = async () => {
-    try {
-      const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-      const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
-      
-      const URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=12&type=video`;
+    const fetchVideos = async () => {
+      try {
+        const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+        const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
 
-      const response = await fetch(URL, {
-        headers: {
-          // This tells Google the request is coming from your domain
-          'Referer': 'https://varoon.site'  // Make sure this matches exactly
+        if (!API_KEY || !CHANNEL_ID) {
+          throw new Error("Missing YouTube API key or Channel ID in environment variables.");
         }
-      });
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('YouTube API Error:', errorData);
-        throw new Error(`HTTP error! status: ${response.status}`);
+
+        const URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=12&type=video`;
+
+        const response = await fetch(URL);
+        const data = await response.json();
+
+        if (!response.ok) {
+          const message = data?.error?.message || `HTTP error! status: ${response.status}`;
+          throw new Error(message);
+        }
+
+        if (!data.items || data.items.length === 0) {
+          throw new Error("No videos found for this channel.");
+        }
+
+        setVideos(data.items);
+      } catch (err) {
+        console.error("Error fetching videos:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
-      
-      const data = await response.json();
-      setVideos(data.items);
-    } catch (error) {
-      console.error('Error fetching videos:', error);
-    }
-  };
-  
-  fetchVideos();
-}, []);
+    };
+
+    fetchVideos();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-20">
+        <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center px-4">
+        <p className="text-red-500 text-lg font-semibold mb-2">Failed to load videos</p>
+        <p className="text-gray-400 text-sm max-w-md">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto p-6">
@@ -51,7 +75,6 @@ const YouTubeVideos = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-
             <Player videoId={video.id.videoId} />
 
             <div className="p-4">

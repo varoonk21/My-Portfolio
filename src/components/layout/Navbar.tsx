@@ -44,7 +44,8 @@ export default function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4"
+            style={{ position: "fixed" }}
+            className="top-4 left-0 right-0 z-50 flex justify-center px-4"
         >
             <nav className="relative flex items-center px-6 py-3  backdrop-blur-md border border-neutral-300 rounded-xl w-full max-w-3xl">
 
@@ -63,8 +64,8 @@ export default function Navbar() {
                             >
                                 {link.name}
                             </a>
-                            
-                        </li>                       
+
+                        </li>
                     ))}
                 </ul>
 

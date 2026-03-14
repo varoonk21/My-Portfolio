@@ -45,7 +45,7 @@ export default function Experience() {
             ref={sectionRef}
             className="relative bg-[#f0f0f0] py-12 md:py-24 px-4 sm:px-6 overflow-hidden"
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="relative max-w-6xl mx-auto">
                 <div className="text-center mb-10 md:mb-16 flex flex-col items-center relative z-20">
                     <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-neutral-500 border border-neutral-200 bg-white/50 px-4 py-1.5 rounded-full uppercase shadow-sm">
                         Career Journey
