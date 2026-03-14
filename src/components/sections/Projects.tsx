@@ -20,6 +20,7 @@ const TAB_DESCRIPTIONS: Record<MainTab, { heading: string; sub: string }> = {
         heading: 'Video Portfolio',
         sub: 'Crafting cinematic experiences and digital narratives. Explore my curated selection of high-impact video productions and motion graphics.',
     },
+    
 };
 
 export default function Projects() {

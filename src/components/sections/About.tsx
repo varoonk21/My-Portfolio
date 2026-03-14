@@ -1,12 +1,32 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import { Icon } from "@iconify/react";
 import User from "../../data/user.json";
 import ResumeGenerator from "../ResumeGenerator";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import ResumePDF from "../../components/resume/ResumePdf";
+import { fetchProjects, type Repo } from "../projects/FetchProjects";
+
 
 
 const About: React.FC = () => {
+
     const resumeRef = useRef<HTMLDivElement>(null);
+
+    const [projects, setProjects] = useState<Repo[]>([]);
+
+    useEffect(() => {
+        const loadProjects = async () => {
+            try {
+                const data = await fetchProjects();
+                setProjects(data);
+            } catch (error) {
+                console.error("Failed to load projects:", error);
+                setProjects([]);
+            }
+        };
+        loadProjects();
+    }, []);
 
     const handleDownload = useReactToPrint({
         contentRef: resumeRef,
@@ -50,6 +70,23 @@ const About: React.FC = () => {
                         <div style={{ display: "none" }}>
                             <ResumeGenerator ref={resumeRef} />
                         </div>
+                        <div
+                            className="active:scale-[0.98] hover:opacity-90 hover:scale-105 font-medium bg-neutral-900 text-white dark:bg-white dark:text-neutral-800 px-6 py-3 rounded-xl flex items-center justify-center transition-all shadow-md group gap-2">
+                            <Icon icon="mdi:file-document" width="20" />
+                            <PDFDownloadLink
+                                document={
+                                    <ResumePDF
+                                        projects={projects}
+                                    />
+                                }
+                                fileName="Varoon-Kumar-Resume.pdf"
+                            >
+                                {({ loading }) =>
+                                    loading ? "Preparing Resume..." : "Resume"
+                                }
+                            </PDFDownloadLink>
+                        </div>
+
                     </div>
 
 

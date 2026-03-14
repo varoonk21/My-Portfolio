@@ -21,17 +21,16 @@ const Skills: React.FC = () => {
                     Technologies and creative tools I use to build modern web experiences and digital content.
                 </p>
 
-                {/* Skills Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-10">
 
                     {skills.map((skill: Skill) => (
                         <div
                             key={skill.name}
-                            className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                            className="bg-white border border-neutral-200 rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                         >
                             <Icon icon={skill.icon} width="40" />
 
-                            <p className="text-sm font-medium text-gray-700">
+                            <p className="text-sm font-medium text-neutral-700">
                                 {skill.name}
                             </p>
                         </div>
