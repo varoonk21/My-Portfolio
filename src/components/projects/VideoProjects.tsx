@@ -145,18 +145,20 @@ export default function VideoProjects() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -16 }}
                         transition={{ duration: 0.25 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+                        className={`grid justify-items-center gap-6 w-full ${activeSubTab === "reels"
+                            ? "grid-cols-1 sm:grid-cols-3 lg:grid-cols-5"
+                            : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                            }`}
                     >
                         {videos.map((video) => (
                             <div
                                 key={video.id.videoId}
-                                className={`group rounded-lg overflow-hidden 
-                                shadow-md transition-all duration-300 ${activeSubTab === "reels" ? "aspect-9/16 max-w-[250px]" : "aspect-video"}`}
+                                className={`group rounded-lg overflow-hidden w-full shadow-md transition-all duration-300 ${activeSubTab === "reels" ? "aspect-9/16 max-w-[250px]" : "aspect-video"}`}
                             >
                                 <iframe
-                                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                                    src={`https://www.youtube.com/embed/${video.id.videoId}?modestbranding=1&rel=0&iv_load_policy=3&showinfo=0`}
                                     allowFullScreen
-                                    className={`w-full block ${activeSubTab === "reels" ? "aspect-9/16 " : "aspect-video"}`}
+                                    className={`w-full block ${activeSubTab === "reels" ? "aspect-9/16" : "aspect-video"}`}
                                 ></iframe>
                                 {/* <Player videoId={video.id.videoId} /> */}
                                 {/* <div className="p-4">
