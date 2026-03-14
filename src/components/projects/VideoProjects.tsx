@@ -150,17 +150,23 @@ export default function VideoProjects() {
                         {videos.map((video) => (
                             <div
                                 key={video.id.videoId}
-                                className="group rounded-2xl overflow-hidden bg-white dark:bg-[#222222] border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 hover:-translate-y-1.5"
+                                className={`group rounded-lg overflow-hidden 
+                                shadow-md transition-all duration-300 ${activeSubTab === "reels" ? "aspect-9/16 max-w-[250px]" : "aspect-video"}`}
                             >
-                                <Player videoId={video.id.videoId} />
-                                <div className="p-4">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                                    allowFullScreen
+                                    className={`w-full block ${activeSubTab === "reels" ? "aspect-9/16 " : "aspect-video"}`}
+                                ></iframe>
+                                {/* <Player videoId={video.id.videoId} /> */}
+                                {/* <div className="p-4">
                                     <h3 className="font-semibold text-sm text-neutral-800 dark:text-white line-clamp-2 group-hover:text-neutral-900 dark:group-hover:text-blue-400 transition-colors">
                                         {video.snippet.title}
                                     </h3>
                                     <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1.5">
                                         {new Date(video.snippet.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-                                    </p>
-                                </div>
+                                    </p> 
+                                </div> */}
                             </div>
                         ))}
                     </motion.div>
