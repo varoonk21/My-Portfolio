@@ -13,7 +13,7 @@ import experience from "../../data/experiences.json";
 import achievements from "../../data/achievements.json";
 import formatDate from "../../utils/formatDate";
 
-import type { Repo } from "../../components/projects/FetchProjects";
+import type { Repo } from "../projects/FetchProjects";
 
 interface Props {
     projects: Repo[];

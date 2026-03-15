@@ -1,32 +1,34 @@
 @import "tailwindcss";
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 
-button, a {
-    cursor: pointer;
+button,
+a {
+  cursor: pointer;
 }
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 @font-face {
   font-family: "CabinetGrotesk";
-  src: url("../fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  src: url("/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
+
 .cabinet {
   font-family: "CabinetGrotesk", sans-serif;
 }

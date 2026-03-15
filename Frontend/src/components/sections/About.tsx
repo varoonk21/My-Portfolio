@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import User from "../../data/user.json";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
-import ResumePDF from "../../components/resume/ResumePdf";
+import ResumePDF from "../resume/ResumePdf";
 import { fetchProjects, type Repo } from "../projects/FetchProjects";
 
 

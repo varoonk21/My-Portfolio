@@ -47,14 +47,14 @@ export default function Achievements() {
 
       {/* Container */}
       <div className="mt-14 grid md:grid-cols-3 grid-cols-1 gap-7">
-        
+
         {/* Achievement Names List */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="col-span-1 space-y-3"
+          className="col-span-1 space-y-3 bg-neutral-100/50"
           id="achievementsNameDiv"
         >
           {achievements.map((achievement) => (
