@@ -1,23 +1,10 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import Player from "../Player";
 
 // @ts-ignore
 import { motion, AnimatePresence } from "motion/react";
 
-type VideoType = "reels" | "videos" | "motion";
-
-type VideoItem = {
-    id: { videoId: string };
-    snippet: {
-        title: string;
-        description?: string;
-        publishedAt?: string;
-        thumbnails?: { medium: { url: string } };
-        channelTitle?: string;
-    };
-    type: VideoType;
-};
+import { useDriveVideos, type VideoType } from '../../hooks/useDriveVideos';
 
 // Sub-tab definitions
 const VIDEO_SUB_TABS: { id: VideoType; label: string; icon: string }[] = [
@@ -26,69 +13,14 @@ const VIDEO_SUB_TABS: { id: VideoType; label: string; icon: string }[] = [
     { id: "motion", label: "Motion", icon: "heroicons:sparkles" },
 ];
 
-// Map each sub-tab to a folder ID
-const VIDEO_FOLDERS: Record<VideoType, string> = {
-    reels: "1VKSN1uxb7uEQvL6v8UpWGe5XBSLx_GXR",   // Replace with your Reels folder ID
-    videos: "15PO_yoYUhxM2kUA0unl5xR0kk5HBWQdC",   // Replace with your Long Videos folder ID
-    motion: "1fe7cOMJQTvPbRILcd1RcGqYxXGZWplT5", // Replace with your Motion Graphics folder ID
-};
-
 export default function DriveProjects() {
-    const [videos, setVideos] = useState<VideoItem[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
     const [activeSubTab, setActiveSubTab] = useState<VideoType>("reels");
 
-    const API_KEY = import.meta.env.VITE_DRIVE_API_KEY;
+    // Call the custom hook - this will immediately return cached data if it has already been fetched!
+    const { data, loading, error } = useDriveVideos();
 
-    // Fetch videos for the active folder
-    useEffect(() => {
-        const fetchVideos = async () => {
-            try {
-                setLoading(true);
-                setError(false);
-
-                const folderId = VIDEO_FOLDERS[activeSubTab];
-
-                // Skip fetch if no folder ID is configured yet
-                if (!folderId) {
-                    setVideos([]);
-                    setLoading(false);
-                    return;
-                }
-
-                if (!API_KEY) {
-                    throw new Error("Missing Drive API key.");
-                }
-
-                const URL = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name,thumbnailLink,webViewLink)&key=${API_KEY}`;
-
-                const response = await fetch(URL);
-                const data = await response.json();
-
-                if (!response.ok) {
-                    const message = data?.error?.message || "Failed to fetch folder videos";
-                    throw new Error(message);
-                }
-                console.log(data);
-
-                const vids: VideoItem[] = (data.files || []).map((file: any) => ({
-                    id: { videoId: file.id },
-                    snippet: { title: file.name },
-                    type: activeSubTab,
-                }));
-
-                setVideos(vids);
-            } catch (err) {
-                console.error(err);
-                setError(true);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchVideos();
-    }, [activeSubTab, API_KEY]);
+    // Get the current list of videos for the selected tab
+    const videos = data?.[activeSubTab] || [];
 
     return (
         <div className="w-full">
@@ -147,14 +79,14 @@ export default function DriveProjects() {
                         exit={{ opacity: 0, y: -16 }}
                         transition={{ duration: 0.25 }}
                         className={`grid justify-items-center gap-6 w-full ${activeSubTab === "reels"
-                            ? "grid-cols-1 sm:grid-cols-3 lg:grid-cols-5"
+                            ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
                             : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                             }`}
                     >
                         {videos.map((video) => (
                             <div
                                 key={video.id.videoId}
-                                className={`relative mx-auto group rounded-lg overflow-hidden w-full shadow-md bg-black transition-all duration-300 ${activeSubTab === "reels" ? "aspect-[9/16] max-w-[280px]" : "aspect-video"}`}
+                                className={`relative mx-auto group rounded-lg overflow-hidden w-full shadow-md bg-black transition-all duration-300 ${activeSubTab === "reels" ? "aspect-9/16 max-w-[280px]" : "aspect-video"}`}
                             >
                                 <iframe
                                     src={`https://drive.google.com/file/d/${video.id.videoId}/preview`}

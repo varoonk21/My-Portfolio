@@ -2,8 +2,8 @@ import { useState } from 'react';
 // @ts-ignore
 import { motion, AnimatePresence } from 'motion/react';
 import WebProjects from '../projects/WebProjects';
-import VideoProjects from '../projects/VideoProjects';
 import DriveProjects from '../projects/DriveProjects';
+import { useDriveVideos } from '../../hooks/useDriveVideos';
 type MainTab = 'web' | 'video';
 
 const MAIN_TABS: { id: MainTab; label: string }[] = [
@@ -18,7 +18,7 @@ const TAB_DESCRIPTIONS: Record<MainTab, { heading: string; sub: string }> = {
     },
     video: {
         heading: 'Video Portfolio',
-        sub: 'Crafting cinematic experiences and digital narratives. Explore my curated selection of high-impact video productions and motion graphics.',
+        sub: 'A showcase of my recent freelance video editing work and personal projects.',
     },
 
 };
@@ -26,6 +26,9 @@ const TAB_DESCRIPTIONS: Record<MainTab, { heading: string; sub: string }> = {
 export default function Projects() {
     const [activeTab, setActiveTab] = useState<MainTab>('web');
 
+    // Boot up the global Drive API fetch the moment this section mounts!
+    // This allows videos to load in the background before the user even clicks the 'Video' tab.
+    useDriveVideos();
     return (
         <section
             className="w-full bg-white text-neutral-800 dark:bg-[#1e1e1e] dark:text-white md:px-16 py-18 px-6"

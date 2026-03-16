@@ -8,6 +8,7 @@ import Experience from '../components/sections/Experience.tsx'
 import Contact from '../components/sections/Contact.tsx'
 import './global.css'
 import Achievements from '../components/sections/Achievements.tsx'
+import Footer from '../components/layout/footer.tsx'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Experience />
       <Achievements />
       <Contact />
+      <Footer />
     </>
   )
 }

@@ -77,7 +77,7 @@ export default function Navbar() {
                     </a>
                 </button>
 
-                <button
+                <motion.button
                     onClick={() => setIsOpen(!isOpen)}
                     className="md:hidden ml-auto p-2 hover:bg-gray-100 rounded-full transition-colors"
                 >
@@ -86,7 +86,7 @@ export default function Navbar() {
                     ) : (
                         <Icon icon="mdi:menu" width={24} />
                     )}
-                </button>
+                </motion.button>
 
                 <AnimatePresence>
                     {isOpen && (
