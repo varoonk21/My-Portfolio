@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import WebProjects from '../projects/WebProjects';
 import VideoProjects from '../projects/VideoProjects';
-
+import DriveProjects from '../projects/DriveProjects';
 type MainTab = 'web' | 'video';
 
 const MAIN_TABS: { id: MainTab; label: string }[] = [
@@ -20,7 +20,7 @@ const TAB_DESCRIPTIONS: Record<MainTab, { heading: string; sub: string }> = {
         heading: 'Video Portfolio',
         sub: 'Crafting cinematic experiences and digital narratives. Explore my curated selection of high-impact video productions and motion graphics.',
     },
-    
+
 };
 
 export default function Projects() {
@@ -85,7 +85,7 @@ export default function Projects() {
                         transition={{ duration: 0.25 }}
                     >
                         {activeTab === 'web' && <WebProjects />}
-                        {activeTab === 'video' && <VideoProjects />}
+                        {activeTab === 'video' && <DriveProjects />}
                     </motion.div>
                 </AnimatePresence>
 
