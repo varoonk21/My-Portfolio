@@ -92,10 +92,10 @@ export default function Footer() {
                 >
                     Made with ❤️ and React by
                 </motion.h6>
-                <div className="overflow-hidden w-full flex justify-center pb-4">
+                <div className="overflow-hidden w-full flex justify-center items-center">
                     <motion.h1
                         variants={{ hidden: { y: "100%" }, visible: { y: 0 } }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                         className="text-[24vw] md:text-[20vw] font-bold text-white leading-[0.8] tracking-tighter cabinet text-center w-full relative z-0"
                     >
                         VAROON

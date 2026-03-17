@@ -68,17 +68,17 @@ export default function Contact() {
         <section className=" bg-[#f0f0f0] text-neutral-800 md:px-16 md:py-20 sm:p-12 p-6 pb-12 dark:bg-[#1e1e1e] dark:text-[#f8f8f8] transition-colors" id="contact">
             <h2 className="text-4xl md:text-5xl cabinet text-start font-bold">Get In Touch</h2>
 
-             <div className="h-1 w-36 md:w-48  bg-neutral-900 rounded-full " />
+            <div className="h-1 w-36 md:w-48  bg-neutral-900 rounded-full " />
 
             <div className="w-full mx-auto grid md:grid-cols-[1fr_1.5fr] gap-4 lg:gap-24 items-start">
 
                 {/* Contact Informantion */}
                 <div className="flex-1">
-                    
+
                     <p className="text-lg my-8 text-neutral-600 leading-relaxed">Ready to start your next project? I'd love to hear about your ideas and discuss how we can bring them to life.</p>
 
                     {/* email */}
-                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 hover:scale-105 transition-all duration-200 rounded-lg">
+                    <a href={`mailto:${User.contact.email}`} className="flex items-center mt-6 space-x-4 hover:translate-x-1 transition-all duration-200 rounded-lg">
                         <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 strokeWidth="2">
@@ -95,7 +95,7 @@ export default function Contact() {
 
                     {/* Phone */}
 
-                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 hover:scale-105 transition-all duration-200 rounded-lg">
+                    <a href={`tel:${User.contact.phone}`} className="flex items-center mt-6 space-x-4 hover:translate-x-1 transition-all duration-200 rounded-lg">
                         <div className=" bg-neutral-800 p-2 rounded-lg text-white items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -143,7 +143,7 @@ export default function Contact() {
                                 </svg>
                             </a>
 
-                            <a href={User.social.linkedin} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Linkedin profile" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
+                            <a href={User.social.linkedin} rel="noopener noreferrer" aria-label="Visit Varoon Kumar's Linkedin profile" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-neutral-200 dark:hover:text-white dark:active:text-white dark:bg-neutral-50 text-[#3d3d3d] rounded-full">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -153,7 +153,7 @@ export default function Contact() {
                                 </svg>
                             </a>
 
-                            <a href={User.contact.whatsapp} rel="noopener noreferrer" aria-label="Text Varoon Kumar on Whatsapp" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-gray-200 dark:hover:text-white dark:active:text-white dark:bg-gray-50 text-[#3d3d3d] rounded-full">
+                            <a href={User.contact.whatsapp} rel="noopener noreferrer" aria-label="Text Varoon Kumar on Whatsapp" target="_blank" className="p-3 hover:scale-110 active:bg-transparent bg-neutral-200 dark:hover:text-white dark:active:text-white dark:bg-neutral-50 text-[#3d3d3d] rounded-full">
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
