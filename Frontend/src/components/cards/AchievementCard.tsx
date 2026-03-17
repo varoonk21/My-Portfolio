@@ -12,7 +12,7 @@ interface Achievement {
 interface Props {
   achievement: Achievement
 }
-export default function AchievementCard({achievement} : Props) {
+export default function AchievementCard({ achievement }: Props) {
   return (
     <>
       <div className="flex gap-2 items-center">
@@ -24,12 +24,12 @@ export default function AchievementCard({achievement} : Props) {
         <Icon icon="heroicons:arrow-up-right-16-solid"
           className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"></Icon></a>
 
-      <div className="space-y-5">
+      <div className="space-y-5 mt-2">
         <p dangerouslySetInnerHTML={{ __html: achievement.shortDesc }} />
         <h3 className="text-sm font-bold">KEY ACHIEVEMENTS</h3>
       </div>
       <ul className="list-disc pl-5 space-y-2">
-        {achievement.KeyAchievement.map((KeyAchievement, index) =>(<li key={index}>{KeyAchievement}</li>))}
+        {achievement.KeyAchievement.map((KeyAchievement, index) => (<li key={index}>{KeyAchievement}</li>))}
       </ul>
     </>
   )

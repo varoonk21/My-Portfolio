@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import User from "../../data/user.json";
+import logo from "../../../public/img/logo.png";
 
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
@@ -64,16 +65,21 @@ export default function Hero() {
         </motion.div>
       )}
 
-      <div />
+      <img src={logo} alt="VK logo" className="md:hidden  absolute top-2 left-3 w-18 " />
+
       {/* Left Social Bar */}
       <div className="absolute left-2 md:left-6 bottom-10 flex flex-col items-center gap-6 text-neutral-900 sm:flex">
 
         <button
-          className="hidden sm:block animate-bounce hover:scale-110 transition"
+          className="flex items-center group"
           onClick={() => setShowVideo(true)}
           title="Play intro video"
         >
-          <Icon icon="mdi:play-circle" width="28" className="text-neutral-900" />
+          <Icon
+            icon="mdi:play-circle"
+            width="28"
+            className="text-neutral-700 group-hover:text-neutral-800 group-hover:scale-125 transition-all duration-300 animate-pulse group-hover:animate-none"
+          />
         </button>
 
         <div className="w-px hidden sm:block h-56 bg-neutral-700" />

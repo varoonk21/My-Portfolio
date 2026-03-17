@@ -17,7 +17,7 @@ export default function AchivementName({ achievement, isActive, setCurrentId }: 
     <motion.div
       whileHover={{ x: 4 }}
       onClick={() => setCurrentId(achievement.id)}
-      className={`p-4 cursor-pointer border-l-4 transition-all duration-200 rounded-sm ${isActive
+      className={`p-4 cursor-pointer border-b-4 md:border-l-4 md:border-b-0 transition-all duration-200 rounded-sm ${isActive
         ? 'border-[#3d3d3d] dark:border-white bg-white dark:bg-[#3d3d3d] shadow-sm'
         : 'border-transparent hover:border-[#3d3d3d] dark:hover:border-white'
         }`}
