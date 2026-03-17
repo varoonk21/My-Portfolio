@@ -1,14 +1,14 @@
 {
   "name": "portfolio-website",
   "version": "1.0.0",
-  "description": "Portfolio website for Sunjay Kumar",
+  "description": "Portfolio website for Varoon Kumar",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "npx nodemon"
   },
   "keywords": [],
-  "author": "Sunjay Kumar",
+  "author": "Varoon Kumar",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
