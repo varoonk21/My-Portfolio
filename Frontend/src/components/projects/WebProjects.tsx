@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "../cards/WebProjectCard";
 import { Icon } from "@iconify/react";
-import { fetchProjects, type Repo } from "./FetchProjects"; 
+import { fetchProjects, type Repo } from "./FetchProjects";
 
 export default function WebProjects() {
   const [projects, setProjects] = useState<Repo[]>([]);
@@ -11,9 +11,9 @@ export default function WebProjects() {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const data = await fetchProjects(); 
+        const data = await fetchProjects();
         setProjects(data);
-      } catch (err) {
+      } catch {
         setError(true);
       } finally {
         setLoading(false);
@@ -27,10 +27,7 @@ export default function WebProjects() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="rounded-2xl overflow-hidden bg-neutral-100 dark:bg-white/5 animate-pulse"
-          >
+          <div key={i} className="rounded-2xl overflow-hidden bg-neutral-100 dark:bg-white/5 animate-pulse">
             <div className="aspect-video w-full bg-neutral-200 dark:bg-white/10" />
             <div className="p-6 space-y-3">
               <div className="h-3 w-24 rounded bg-neutral-200 dark:bg-white/10" />

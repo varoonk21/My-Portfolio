@@ -16,7 +16,7 @@ export const fetchProjects = async (limit?: number): Promise<Repo[]> => {
 
   try {
     const response = await fetch(
-      `https://api.github.com/users/${userName}/repos?sort=created&direction=desc&per_page=${repoCount}`
+      `https://api.github.com/users/${userName}/repos?sort=created&direction=desc&per_page=${repoCount}`,
     );
 
     if (!response.ok) {

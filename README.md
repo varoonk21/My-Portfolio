@@ -21,6 +21,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn
 

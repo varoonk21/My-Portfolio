@@ -1,6 +1,6 @@
-const { Resend } = require('resend');
+import { Resend } from "resend";
 
-async function sendemail(name, email, message) {
+export default async function sendemail(name, email, message) {
   const resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
   const emailTemplate = `
 <!DOCTYPE html>
@@ -87,11 +87,10 @@ async function sendemail(name, email, message) {
       from: process.env.SENDER_EMAIL,
       to: process.env.RECIVING_EMAIL,
       subject: `Message from ${name} from Portfolio Website`,
-      html: emailTemplate
+      html: emailTemplate,
     });
   } catch (error) {
     console.log(error);
     throw error;
   }
 }
-module.exports = { sendemail };

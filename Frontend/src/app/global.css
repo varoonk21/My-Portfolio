@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
-
 
 button,
 a {

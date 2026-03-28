@@ -1,42 +1,32 @@
 [
-    {
-        "id": "exp1",
-        "company": "PreMed.PK",
-        "position": "Freelance Video Editor",
-        "location": "Pakistan (Remote)",
-        "startDate": "2024-01",
-        "endDate": "",
-        "isCurrentRole": true,
-        "bullets": [
-            "Created engaging and dynamic reels for social media platforms to enhance audience engagement and brand presence.",
-            "Collaborated closely with the marketing team to deliver high-quality video content aligned with brand goals.",
-            "Applied advanced editing, transitions, color grading, and audio synchronization using Adobe Premiere Pro."
-        ],
-        "skills": [
-            "Video Editing",
-            "Adobe Premiere Pro",
-            "Audio Editing",
-            "Color Grading"
-        ]
-    },
-    {
-        "id": "exp2",
-        "company": "Vision Media Agency",
-        "position": "Video Editor",
-        "location": "Pakistan",
-        "startDate": "2023-01",
-        "endDate": "2024-12",
-        "isCurrentRole": false,
-        "bullets": [
-            "Handled post-production editing for client projects with strict deadlines.",
-            "Ensured brand consistency and visual quality across multiple video campaigns.",
-            "Delivered polished video outputs through precise editing and creative effects."
-        ],
-        "skills": [
-            "Video Editing",
-            "Adobe Premiere Pro",
-            "Audio Editing",
-            "Color Grading"
-        ]
-    }
+  {
+    "id": "exp1",
+    "company": "PreMed.PK",
+    "position": "Freelance Video Editor",
+    "location": "Pakistan (Remote)",
+    "startDate": "2024-01",
+    "endDate": "",
+    "isCurrentRole": true,
+    "bullets": [
+      "Created engaging and dynamic reels for social media platforms to enhance audience engagement and brand presence.",
+      "Collaborated closely with the marketing team to deliver high-quality video content aligned with brand goals.",
+      "Applied advanced editing, transitions, color grading, and audio synchronization using Adobe Premiere Pro."
+    ],
+    "skills": ["Video Editing", "Adobe Premiere Pro", "Audio Editing", "Color Grading"]
+  },
+  {
+    "id": "exp2",
+    "company": "Vision Media Agency",
+    "position": "Video Editor",
+    "location": "Pakistan",
+    "startDate": "2023-01",
+    "endDate": "2024-12",
+    "isCurrentRole": false,
+    "bullets": [
+      "Handled post-production editing for client projects with strict deadlines.",
+      "Ensured brand consistency and visual quality across multiple video campaigns.",
+      "Delivered polished video outputs through precise editing and creative effects."
+    ],
+    "skills": ["Video Editing", "Adobe Premiere Pro", "Audio Editing", "Color Grading"]
+  }
 ]

@@ -1,61 +1,61 @@
 [
-    {
-        "id": 1,
-        "type": "Education",
-        "time": "2022 - 2026",
-        "name": "Bachelor's in Software Engineering",
-        "place": "Mehran University of Engineering and Technology, Jamshoro",
-        "url": "https://www.muet.edu.pk/",
-        "shortDesc": "Currently pursuing a <b>Bachelor’s degree in Software Engineering</b> with focus on modern software development and practical projects.",
-        "KeyAchievement": [
-            "Studying core subjects including Data Structures, Web Development, Databases, OOP, and Artificial Intelligence.",
-            "Completed multiple practical projects focused on full-stack web development and real-world software solutions.",
-            "Developed a strong foundation in software design, algorithms, system architecture, and collaborative team projects."
-        ]
-    },
-    {
-        "id": 2,
-        "type": "Achievement",
-        "time": "Jan - Feb 2025",
-        "name": "Hack for Humanity - 2025",
-        "place": "DevPost",
-        "url": "https://devpost.com/software/ride-sharing-website",
-        "shortDesc": "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
-        "KeyAchievement": [
-            "Built 'UniRide', a real-time student ride pooling platform to solve university commuting issues.",
-            "Developed backend using Node.js, Express.js, and MongoDB.",
-            "Implemented real-time ride updates using WebSockets with Socket.IO.",
-            "Designed responsive UI using Tailwind CSS and EJS templates."
-        ]
-    },
-    {
-        "id": 3,
-        "type": "Certification",
-        "time": "2023",
-        "name": "Digital Marketing Certificate",
-        "place": "National Freelancing Training Program (NFTP)",
-        "url": "https://nftp.pitb.gov.pk/",
-        "shortDesc": "Completed a professional <b>Digital Marketing certification</b> focusing on modern online marketing strategies.",
-        "KeyAchievement": [
-            "Learned SEO, social media marketing, and online brand promotion strategies.",
-            "Developed skills in content creation and digital campaign management.",
-            "Gained understanding of analytics tools to measure marketing performance.",
-            "Applied marketing strategies to improve engagement on digital platforms."
-        ]
-    },
-    {
-        "id": 4,
-        "type": "Achievement",
-        "time": "2024 - Present",
-        "name": "SES Head Director – Videography",
-        "place": "Software Engineering Society (MUET)",
-        "url": "https://ses.sw.muet.edu.pk",
-        "shortDesc": "Leading the <b>Videography Department</b> at the Software Engineering Society, managing creative media production.",
-        "KeyAchievement": [
-            "Directed videography and editing for university tech events and society activities.",
-            "Led a creative team responsible for filming, editing, and publishing media content.",
-            "Planned visual storytelling and media coverage for multiple student events.",
-            "Ensured high-quality video production and brand consistency across society platforms."
-        ]
-    }
+  {
+    "id": 1,
+    "type": "Education",
+    "time": "2022 - 2026",
+    "name": "Bachelor's in Software Engineering",
+    "place": "Mehran University of Engineering and Technology, Jamshoro",
+    "url": "https://www.muet.edu.pk/",
+    "shortDesc": "Currently pursuing a <b>Bachelor’s degree in Software Engineering</b> with focus on modern software development and practical projects.",
+    "KeyAchievement": [
+      "Studying core subjects including Data Structures, Web Development, Databases, OOP, and Artificial Intelligence.",
+      "Completed multiple practical projects focused on full-stack web development and real-world software solutions.",
+      "Developed a strong foundation in software design, algorithms, system architecture, and collaborative team projects."
+    ]
+  },
+  {
+    "id": 2,
+    "type": "Achievement",
+    "time": "Jan - Feb 2025",
+    "name": "Hack for Humanity - 2025",
+    "place": "DevPost",
+    "url": "https://devpost.com/software/ride-sharing-website",
+    "shortDesc": "Ranked <b>20th overall</b> and won the <b>Public Voting Award</b> among 100+ participating teams.",
+    "KeyAchievement": [
+      "Built 'UniRide', a real-time student ride pooling platform to solve university commuting issues.",
+      "Developed backend using Node.js, Express.js, and MongoDB.",
+      "Implemented real-time ride updates using WebSockets with Socket.IO.",
+      "Designed responsive UI using Tailwind CSS and EJS templates."
+    ]
+  },
+  {
+    "id": 3,
+    "type": "Certification",
+    "time": "2023",
+    "name": "Digital Marketing Certificate",
+    "place": "National Freelancing Training Program (NFTP)",
+    "url": "https://nftp.pitb.gov.pk/",
+    "shortDesc": "Completed a professional <b>Digital Marketing certification</b> focusing on modern online marketing strategies.",
+    "KeyAchievement": [
+      "Learned SEO, social media marketing, and online brand promotion strategies.",
+      "Developed skills in content creation and digital campaign management.",
+      "Gained understanding of analytics tools to measure marketing performance.",
+      "Applied marketing strategies to improve engagement on digital platforms."
+    ]
+  },
+  {
+    "id": 4,
+    "type": "Achievement",
+    "time": "2024 - Present",
+    "name": "SES Head Director – Videography",
+    "place": "Software Engineering Society (MUET)",
+    "url": "https://ses.sw.muet.edu.pk",
+    "shortDesc": "Leading the <b>Videography Department</b> at the Software Engineering Society, managing creative media production.",
+    "KeyAchievement": [
+      "Directed videography and editing for university tech events and society activities.",
+      "Led a creative team responsible for filming, editing, and publishing media content.",
+      "Planned visual storytelling and media coverage for multiple student events.",
+      "Ensured high-quality video production and brand consistency across society platforms."
+    ]
+  }
 ]
